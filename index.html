@@ -7,9 +7,7 @@
   <meta name="description" content="Sovereign media & production lab. Kontrastudio turns artistic practice into reusable systems across sound, image, narrative, and technology.">
   <!-- Keep noindex until launch -->
   <meta name="robots" content="noindex, nofollow">
-  <!-- Consolidate signals on the production domain -->
   <link rel="canonical" href="https://www.kontrastudio.eu/">
-  <!-- Favicon (swap these paths to your actual assets when ready) -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
   <!-- Social preview -->
@@ -24,12 +22,12 @@
 
   <style>
     :root {
-      --measure: 72ch;      /* comfortable line length */
-      --px: 20px;           /* base padding */
-      --lh: 1.6;            /* line-height */
-      --fg: #0a0a0a;        /* foreground */
-      --muted: #5a5a5a;     /* secondary text */
-      --rule: #e6e6e6;      /* hairline */
+      --measure: 72ch;
+      --px: 20px;
+      --lh: 1.6;
+      --fg: #0a0a0a;
+      --muted: #5a5a5a;
+      --rule: #e6e6e6;
     }
     * { box-sizing: border-box; }
     html { font-size: 16px; }
@@ -44,7 +42,7 @@
       text-rendering: optimizeLegibility;
     }
 
-    /* --- Masthead (logo top-left) --- */
+    /* Masthead */
     .site-head {
       padding: calc(var(--px) * 0.9) var(--px) 0 var(--px);
     }
@@ -54,18 +52,32 @@
       gap: .5rem;
       text-decoration: none;
     }
-    .brand img {src="/2025.08.26%20-%20Kontrastudio%20-%20Logo.svg?v=1">
+    .brand img {
       display: block;
-      width: 168px; /* adjust tastefully */
+      width: 168px;
       height: auto;
+      transition: filter 0.3s ease;
+    }
+
+    /* Dark mode invert */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0a0a0a;
+        color: #f5f5f5;
+      }
+      .brand img {
+        filter: invert(1) hue-rotate(180deg);
+      }
+      a { color: #f5f5f5; }
+      .lead, .micro, footer { color: #a0a0a0; }
+      hr { background: #333; }
     }
 
     main {
       max-width: var(--measure);
       padding: calc(var(--px) * 1.5) var(--px);
-      margin: 8vh auto 14vh auto; /* tightened to harmonize with masthead */
+      margin: 8vh auto 14vh auto;
     }
-    /* keep page header styling, separate from masthead */
     main > header { margin-bottom: 2rem; }
 
     h1 {
@@ -97,7 +109,7 @@
       text-underline-offset: 2px;
     }
     a:focus-visible {
-      outline: 2px solid #000;
+      outline: 2px solid currentColor;
       outline-offset: 3px;
     }
     hr {
@@ -108,15 +120,14 @@
     }
     footer {
       margin-top: 2.5rem;
-      color: var(--muted);
       font-size: .95rem;
+      color: var(--muted);
     }
     .micro {
       display: flex;
       gap: .75rem;
       flex-wrap: wrap;
     }
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
     }
@@ -124,11 +135,10 @@
 </head>
 
 <body>
-  <!-- Masthead -->
   <header class="site-head" role="banner">
     <a class="brand" href="/" aria-label="Kontrastudio home">
       <img
-        src="/2025.08.26%20-%20Kontrastudio%20-%20Logo.svg"
+        src="/2025.08.26%20-%20Kontrastudio%20-%20Logo.svg?v=1"
         alt="Kontrastudio"
         decoding="async"
         fetchpriority="high">
@@ -185,7 +195,6 @@
     </footer>
   </main>
 
-  <!-- Minimal email obfuscation: builds a mailto link at runtime -->
   <script>
     (function () {
       var user = "contact";
@@ -198,7 +207,6 @@
       a.rel = "nofollow";
       a.textContent = addr;
       span.replaceWith(a);
-      // year
       var y = document.getElementById("year");
       if (y) y.textContent = new Date().getFullYear();
     })();
