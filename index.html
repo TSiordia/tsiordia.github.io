@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kontrastudio OÜ — Pre-Launch</title>
   <meta name="description" content="Sovereign media & production lab. Kontrastudio turns artistic practice into reusable systems across sound, image, narrative, and technology.">
-  <!-- Keep noindex until launch -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://www.kontrastudio.eu/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
-  <!-- Social preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Kontrastudio OÜ — Pre-Launch">
   <meta property="og:description" content="Sovereign media & production lab.">
@@ -138,7 +136,7 @@
   <header class="site-head" role="banner">
     <a class="brand" href="/" aria-label="Kontrastudio home">
       <img
-        src="/2025.08.26%20-%20Kontrastudio%20-%20Logo.svg?v=1"
+        src="/2025.08.26%20-%20Kontrastudio%20-%20Logo.svg"
         alt="Kontrastudio"
         decoding="async"
         fetchpriority="high">
@@ -153,20 +151,14 @@
 
     <section aria-labelledby="about">
       <h2 id="about">About</h2>
-      <p>
-        Kontrastudio crystallizes tomorrow’s tradition today by turning artistic practice
-        into reusable systems across sound, image, narrative, and technology.
-      </p>
-      <p>
-        Public site in provisioning; content staged for release.
-      </p>
+      <p>Kontrastudio crystallizes tomorrow’s tradition today by turning artistic practice
+        into reusable systems across sound, image, narrative, and technology.</p>
+      <p>Public site in provisioning; content staged for release.</p>
     </section>
 
     <section aria-labelledby="ipcore">
       <h2 id="ipcore">IP Core</h2>
-      <p>
-        Methods are documented and licensed; derivatives require permission.
-      </p>
+      <p>Methods are documented and licensed; derivatives require permission.</p>
       <ul>
         <li>Modelo de Orquesta Inmóvil™</li>
         <li>Breath-Based Orchestral Rendering™</li>
@@ -178,9 +170,7 @@
     <section aria-labelledby="status">
       <h2 id="status">Status &amp; Contact</h2>
       <p>Infrastructure is live; public assets will roll out in stages.</p>
-      <p>
-        Contact: <span id="email-fallback">contact [at] kontrastudio [dot] eu</span>
-      </p>
+      <p>Contact: <span id="email-fallback">contact [at] kontrastudio [dot] eu</span></p>
     </section>
 
     <hr>
@@ -201,12 +191,13 @@
       var domain = "kontrastudio.eu";
       var addr = user + "@" + domain;
       var span = document.getElementById("email-fallback");
-      if (!span) return;
-      var a = document.createElement("a");
-      a.href = "mailto:" + addr;
-      a.rel = "nofollow";
-      a.textContent = addr;
-      span.replaceWith(a);
+      if (span) {
+        var a = document.createElement("a");
+        a.href = "mailto:" + addr;
+        a.rel = "nofollow";
+        a.textContent = addr;
+        span.replaceWith(a);
+      }
       var y = document.getElementById("year");
       if (y) y.textContent = new Date().getFullYear();
     })();
