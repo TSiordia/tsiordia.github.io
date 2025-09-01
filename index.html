@@ -43,12 +43,31 @@
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
+
+    /* --- Masthead (logo top-left) --- */
+    .site-head {
+      padding: calc(var(--px) * 0.9) var(--px) 0 var(--px);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      text-decoration: none;
+    }
+    .brand img {
+      display: block;
+      width: 168px; /* adjust tastefully */
+      height: auto;
+    }
+
     main {
       max-width: var(--measure);
       padding: calc(var(--px) * 1.5) var(--px);
-      margin: 12vh auto 14vh auto;
+      margin: 8vh auto 14vh auto; /* tightened to harmonize with masthead */
     }
-    header { margin-bottom: 2rem; }
+    /* keep page header styling, separate from masthead */
+    main > header { margin-bottom: 2rem; }
+
     h1 {
       font-size: 2rem;
       line-height: 1.2;
@@ -105,10 +124,21 @@
 </head>
 
 <body>
+  <!-- Masthead -->
+  <header class="site-head" role="banner">
+    <a class="brand" href="/" aria-label="Kontrastudio home">
+      <img
+        src="/2025.08.26%20-%20Kontrastudio%20-%20Logo.svg"
+        alt="Kontrastudio"
+        decoding="async"
+        fetchpriority="high">
+    </a>
+  </header>
+
   <main>
     <header>
       <h1>Kontrastudio OÜ — Pre-Launch</h1>
-      <p class="lead">Sovereign media & production lab.</p>
+      <p class="lead">Sovereign media &amp; production lab.</p>
     </header>
 
     <section aria-labelledby="about">
@@ -128,7 +158,6 @@
         Methods are documented and licensed; derivatives require permission.
       </p>
       <ul>
-        <!-- Replace these four with your exact marks; keep ™ usage consistent -->
         <li>Modelo de Orquesta Inmóvil™</li>
         <li>Breath-Based Orchestral Rendering™</li>
         <li>Sovereign Media Pipelines™</li>
@@ -176,3 +205,4 @@
   </script>
 </body>
 </html>
+
